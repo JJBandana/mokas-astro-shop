@@ -9,5 +9,4 @@ import vercel from "@astrojs/vercel";
 export default defineConfig({
   integrations: [svelte()],
   adapter: vercel(),
-  output: "server",
 });

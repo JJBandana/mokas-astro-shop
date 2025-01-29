@@ -1,0 +1,49 @@
+---
+const { images, name } = Astro.props;
+---
+
+<div class="carousel">
+  <img
+    class="grid-item"
+    src={images[0]}
+    alt={name}
+    transition:name={name}
+    width="600"
+  />
+  {
+    images.map((image, index) => {
+      if (index !== 0) {
+        return <img class="grid-item" src={image} width="600" />;
+      }
+    })
+  }
+</div>
+
+<style>
+  .carousel {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    gap: 0.5rem;
+  }
+
+  .grid-item {
+    scroll-snap-align: center;
+    aspect-ratio: 1;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  @media (max-width: 990px) {
+    .carousel {
+      /* If there is an error, change the next value to a percentage like 100% */
+      grid-template-columns: none;
+      grid-auto-flow: column;
+      grid-auto-columns: 96%;
+      overflow-x: auto;
+      height: auto;
+      gap: 0.25rem;
+    }
+  }
+</style>

@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Stamp Book Passport",
+      "price": 24.99,
+      "description": "Taza hecha a mano con diseños únicos",
+      "images": [
+        "/books1.jpeg",
+        "/books2.jpeg",
+        "/books3.jpeg",
+        "/books4.jpeg",
+        "/books5.jpeg",
+        "/books6.jpeg",
+        "/books7.jpeg"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+---
+const {
+  title = "Product Title",
+  price = 29.99,
+  images = ["https://placehold.co/600x600/dodgerblue/black?text=Product"],
+  id,
+} = Astro.props;
+---
+
+<a href=`/products/${id}`>
+  <div class="card">
+    <div class="image-container">
+      <img src={images[0]} alt={title} transition:name={title} />
+    </div>
+    <h3>{title}</h3>
+    <h2>{price}</h2>
+  </div>
+</a>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    h3 {
+      font-size: 0.89rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: normal;
+    }
+  }
+
+  .image-container {
+    aspect-ratio: 1 / 1; /* Mantiene un contenedor cuadrado */
+    width: 100%; /* Asegura que sea responsivo */
+    overflow: hidden; /* Oculta cualquier desbordamiento de la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: 1rem;
+  }
+</style>

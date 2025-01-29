@@ -16,6 +16,8 @@ export const getStaticPaths = (() => {
 
 const { id } = Astro.params;
 const { product } = Astro.props;
+
+export const prerender = true;
 ---
 
 <Layout title={product.name}>

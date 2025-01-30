@@ -7,7 +7,7 @@ const {
 } = Astro.props;
 ---
 
-<a href=`/products/${id}`>
+<a href=`/products/${title.toLowerCase().split(" ").join("-")}`>
   <div class="card">
     <div class="image-container">
       <img src={images[0]} alt={title} transition:name={title} />
@@ -47,6 +47,6 @@ const {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-block: 1rem;
+    margin-block: 0.5rem;
   }
 </style>

@@ -14,6 +14,36 @@
         "/books6.jpeg",
         "/books7.jpeg"
       ]
+    },
+    {
+      "id": 2,
+      "name": "Stamp Book Passport 1",
+      "price": 24.99,
+      "description": "Taza hecha a mano con diseños únicos",
+      "images": [
+        "/books1.jpeg",
+        "/books2.jpeg",
+        "/books3.jpeg",
+        "/books4.jpeg",
+        "/books5.jpeg",
+        "/books6.jpeg",
+        "/books7.jpeg"
+      ]
+    },
+    {
+      "id": "prod_Rg966C0hcJBl0H",
+      "name": "Black Tsunami Stamp Book",
+      "price": 24.99,
+      "description": "Taza hecha a mano con diseños únicos",
+      "images": [
+        "/black.webp",
+        "/books2.jpeg",
+        "/books3.jpeg",
+        "/books4.jpeg",
+        "/books5.jpeg",
+        "/books6.jpeg",
+        "/books7.jpeg"
+      ]
     }
   ]
 }

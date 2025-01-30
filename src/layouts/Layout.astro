@@ -19,9 +19,11 @@ const { title = "Footprint" } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <Announcement />
+    <Announcement client:load />
     <Header />
-    <slot />
+    <div class="container">
+      <slot />
+    </div>
     <Footer />
   </body>
 </html>
@@ -37,5 +39,10 @@ const { title = "Footprint" } = Astro.props;
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .container {
+    max-width: 90%;
+    margin-inline: auto;
   }
 </style>

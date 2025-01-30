@@ -8,13 +8,13 @@ import ProductSection from "@/components/ProductSection.astro";
 export const getStaticPaths = (() => {
   return products.map((product) => {
     return {
-      params: { id: product.id },
+      params: { slug: product.name.toLowerCase().split(" ").join("-") },
       props: { product },
     };
   });
 }) satisfies GetStaticPaths;
 
-const { id } = Astro.params;
+const { slug } = Astro.params;
 const { product } = Astro.props;
 
 export const prerender = true;

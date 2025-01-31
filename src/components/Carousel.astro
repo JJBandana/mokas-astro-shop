@@ -11,7 +11,7 @@ const { images, name } = Astro.props;
     width="600"
   />
   {
-    images.map((image, index) => {
+    images.map((image: string, index: number) => {
       if (index !== 0) {
         return <img class="grid-item" src={image} width="600" />;
       }

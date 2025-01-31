@@ -25,11 +25,13 @@ const customTransition = {
 ---
 
 <div class="product-info" transition:animate={customTransition}>
-  <h1 class="product-title">{name}</h1>
+  <h1 class="product-title daruma-regular">{name}</h1>
   <div class="price-container">
     <p class="price">{price}</p>
     <p class="compare-price">{price * 2}</p>
   </div>
+
+  <BuyForm client:load />
 
   <div>
     <div>
@@ -56,14 +58,14 @@ const customTransition = {
       ))
     }
   </ul>
-  <BuyForm client:load />
 </div>
 
 <style>
   .product-title {
     font-size: 3.5rem;
     text-wrap: balance;
-    line-height: 1;
+    line-height: 0.9;
+    margin-bottom:;
   }
 
   .features {
@@ -103,10 +105,16 @@ const customTransition = {
 
   .product-info {
     display: flex;
+    gap: 1rem;
     flex-flow: column nowrap;
     position: sticky;
     top: 6rem;
     /* ↑ top is needed so the title doesn't go under the header after scrolling. */
     max-height: fit-content;
+  }
+
+  .description {
+    white-space: pre-line;
+    font-size: 1rem;
   }
 </style>

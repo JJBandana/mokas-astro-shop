@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
+
 :root {
-  --font-family: "Helvetica Neue", Helvetica;
+  --font-family: "Helvetica";
 
   --clr-accent-100: hsl(13, 100%, 96%);
   --clr-accent-300: hsl(12, 88%, 75%);
   --clr-accent-400: hsl(12, 88%, 59%);
   --clr-accent-500: hsl(12, 60%, 45%);
 
+  --clr-primary-100: hsl(235, 96%, 89%);
+  --clr-primary-100: hsl(235, 35%, 72%);
+  --clr-primary-200: hsl(234, 21%, 55%);
+  --clr-primary-300: hsl(232, 24%, 39%);
   --clr-primary-400: hsl(228, 39%, 23%);
 
   --clr-neutral-900: hsl(232, 12%, 13%);
@@ -29,6 +35,7 @@
   --fs-nav: var(--fs-500);
   --fs-button: var(--fs-300);
 }
+
 
 @media (max-width: 50em) {
   :root {
@@ -212,10 +219,21 @@ textarea:not([rows]) {
   font-size: var(--fs-900);
 }
 
+.daruma-regular {
+  font-family: "Darumadrop One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.daruma {
+  font-family: "Darumadrop One", serif;
+
+}
+
 /* General Styling */
 body {
   font-size: var(--fs-body);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: var(--font-family);
   color: var(--clr-primary-400);
 }
 

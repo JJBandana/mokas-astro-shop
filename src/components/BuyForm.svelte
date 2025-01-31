@@ -38,15 +38,6 @@
 
 <form onsubmit={submit}>
   <div class="details">
-    <label for="variation"
-      >Variation
-      <select name="variation" id="variation">
-        <option value="0">Red</option>
-        <option value="1">Blue</option>
-        <option value="2">Black</option>
-      </select>
-    </label>
-
     <label for="quantity"
       >Quantity
       <div class="stepper">
@@ -95,14 +86,16 @@
 
   label {
     display: flex;
+    gap: 0.5rem;
     flex-direction: column;
+    color: gray;
   }
 
-  select#variation {
+  /* select#variation {
     border-radius: 30px;
     min-height: 40px;
     padding: 8px;
-  }
+  } */
 
   .details {
     display: inline-flex;

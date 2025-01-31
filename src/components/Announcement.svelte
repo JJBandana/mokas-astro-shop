@@ -3,10 +3,8 @@
   import { onDestroy } from "svelte";
 
   let phrases = [
-    "This is the best Stamp book you can get in Japan!",
-    "Moka is the most beautiful woman ever ❤️",
-    "Jojo is in love with her 💘",
-    "And he wants to live with Moka 🏡",
+    "Celebrating our new book release with a special sale!",
+    "Limited time offer! Celebrate our new book with an exclusive discount",
   ];
 
   let index = 0;
@@ -14,7 +12,7 @@
 
   const interval = setInterval(() => {
     index = (index + 1) % phrases.length; // Cambia la frase suavemente
-  }, 4000); // Cada 7 segundos
+  }, 4000); // Every 4 seconds
 
   onDestroy(() => clearInterval(interval)); // Limpia el intervalo cuando el componente se destruye
 </script>
@@ -22,7 +20,7 @@
 <div class="announcement-bar">
   {#each phrases as phrase, i (phrase)}
     {#if i === index}
-      <p class="message container" out:send in:receive>
+      <p class="message container fs-600" out:send in:receive>
         {phrase}
       </p>
     {/if}
@@ -50,13 +48,4 @@
       white-space: nowrap;
     }
   }
-
-  /* .message {
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    white-space: nowrap;
-    position: absolute;
-    width: 100%;
-  } */
 </style>

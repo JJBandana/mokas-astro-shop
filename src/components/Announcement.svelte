@@ -45,7 +45,8 @@
       letter-spacing: 1px;
       text-align: center;
       position: absolute;
-      white-space: nowrap;
+      white-space: normal;
+      word-wrap: break-word;
     }
   }
 </style>

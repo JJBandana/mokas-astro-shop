@@ -80,8 +80,18 @@
 <style>
   button,
   select {
-    /* background-color: var(--color-primary-100); */
     border: black 1px solid;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .number {
+    padding-inline: 0.5rem;
+    padding-block: 1.05rem;
+    color: var(--clr-primary-500);
   }
 
   label {
@@ -90,12 +100,6 @@
     flex-direction: column;
     color: gray;
   }
-
-  /* select#variation {
-    border-radius: 30px;
-    min-height: 40px;
-    padding: 8px;
-  } */
 
   .details {
     display: inline-flex;
@@ -110,9 +114,10 @@
     align-items: center;
     width: fit-content;
     border: black 1px solid;
-    border-radius: 30px;
+    border-radius: 0.5rem;
 
     button {
+      background-color: white;
       padding: 8px;
       height: 40px;
       width: 40px;
@@ -121,11 +126,7 @@
       cursor: pointer;
       overflow: hidden;
       border: none;
-      border-radius: 30px;
-
-      :hover {
-        background-color: var(--color-primary-600);
-      }
+      border-radius: 0.5rem;
     }
 
     input {

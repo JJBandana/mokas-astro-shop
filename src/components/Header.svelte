@@ -80,7 +80,6 @@
     svg {
       width: 150px;
       height: auto;
-      padding-block: 1rem;
     }
   }
 

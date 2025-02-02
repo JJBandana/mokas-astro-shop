@@ -18,10 +18,6 @@
 		{
 			"src": "^\\/_image\\/?$",
 			"dest": "_render"
-		},
-		{
-			"src": "^\\/commerce-disclosure\\/?$",
-			"dest": "_render"
 		}
 	]
 }

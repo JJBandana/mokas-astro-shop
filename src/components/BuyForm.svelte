@@ -1,29 +1,28 @@
 <script lang="ts">
   let quantity = $state(1);
 
-  let responseMessage: string;
   const minValue = 1;
   const maxValue = 10;
 
-  const increment = (e: SubmitEvent) => {
-    e.preventDefault();
+  const increment = (event: Event) => {
+    event.preventDefault();
 
     if (quantity < maxValue) {
       quantity++;
     }
   };
 
-  const decrement = (e: SubmitEvent) => {
-    e.preventDefault();
+  const decrement = (event: Event) => {
+    event.preventDefault();
 
     if (quantity > minValue) {
       quantity--;
     }
   };
 
-  async function submit(e: SubmitEvent) {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget as HTMLFormElement);
+  async function submit(event: SubmitEvent) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
     console.log(formData);
 
     const response = await fetch("/api/checkout", {
@@ -47,7 +46,7 @@
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"
+            style="fill: currentColor;transform: ;msFilter:;"
             ><path d="M5 11h14v2H5z"></path></svg
           ></button
         >
@@ -66,7 +65,7 @@
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"
+            style="fill: currentColor;transform: ;msFilter:;"
             ><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg
           ></button
         >
@@ -78,11 +77,6 @@
 </form>
 
 <style>
-  button,
-  select {
-    border: black 1px solid;
-  }
-
   button[type="submit"] {
     width: 100%;
     max-width: 100%;
@@ -92,13 +86,14 @@
     padding-inline: 0.5rem;
     padding-block: 1.05rem;
     color: var(--clr-primary-500);
+    font-weight: 800;
   }
 
   label {
     display: flex;
     gap: 0.5rem;
     flex-direction: column;
-    color: gray;
+    color: var(--clr-accent-400);
   }
 
   .details {
@@ -113,11 +108,12 @@
     justify-content: center;
     align-items: center;
     width: fit-content;
-    border: black 1px solid;
+    border: var(--clr-accent-800) 1px solid;
     border-radius: 0.5rem;
+    background-color: var(--clr-accent-100);
 
     button {
-      background-color: white;
+      background-color: inherit;
       padding: 8px;
       height: 40px;
       width: 40px;
@@ -127,6 +123,10 @@
       overflow: hidden;
       border: none;
       border-radius: 0.5rem;
+    }
+
+    svg {
+      color: var(--clr-accent-800);
     }
 
     input {

@@ -12,7 +12,7 @@
 
   const interval = setInterval(() => {
     index = (index + 1) % phrases.length; // Cambia la frase suavemente
-  }, 4000); // Every 4 seconds
+  }, 7000); // Every 7 seconds
 
   onDestroy(() => clearInterval(interval)); // Limpia el intervalo cuando el componente se destruye
 </script>
@@ -35,7 +35,7 @@
     align-items: center;
     width: 100%;
     min-height: 56px;
-    background-color: violet;
+    background-color: var(--clr-accent-400);
     overflow: hidden;
 
     p {

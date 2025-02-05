@@ -1,0 +1,53 @@
+---
+const { title = "Summary", content = "This is the content of the summary." } =
+  Astro.props;
+---
+
+<details name="hello">
+  <summary>{title}</summary>
+  <p>
+    {content}
+  </p>
+</details>
+
+<style>
+  details {
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+    color: var(--clr-accent-950);
+    background-color: var(--clr-accent-200);
+
+    transition: max-height 0.4s ease-in-out;
+    transition-behavior: allow-discrete;
+    white-space: pre-line;
+    text-wrap: balance;
+  }
+
+  summary {
+    padding-inline: 0.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+
+  details::details-content {
+    display: block;
+    margin-inline: 2rem;
+    block-size: 0;
+    overflow: hidden;
+
+    transition-property: block-size, content-visibility;
+    transition-duration: 0.5s;
+    transition-behavior: allow-discrete;
+  }
+
+  details[open]::details-content {
+    block-size: auto;
+    block-size: calc-size(auto, size);
+  }
+</style>

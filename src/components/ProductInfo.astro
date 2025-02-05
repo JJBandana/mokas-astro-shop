@@ -1,8 +1,13 @@
 ---
 import BuyForm from "@/components/BuyForm.svelte";
+import Drawer from "./Drawer.astro";
 const { name, description, price } = Astro.props;
 
-const features = ["Feature 1", "Feature 2", "Feature 3"];
+const features = [
+  "Handmade in Japan",
+  "Lay-flat binding",
+  "Personalized Travel Map",
+];
 
 const anim = {
   old: {
@@ -25,21 +30,13 @@ const customTransition = {
 ---
 
 <div class="product-info" transition:animate={customTransition}>
-  <h1 class="product-title daruma-regular">{name}</h1>
+  <h1 class="product-title daruma-regular text-primary-700">{name}</h1>
   <div class="price-container">
     <p class="price">{price}</p>
     <p class="compare-price">{price * 2}</p>
   </div>
 
   <BuyForm client:load />
-
-  <div>
-    <div>
-      <p class="description">
-        {description}
-      </p>
-    </div>
-  </div>
 
   <ul class="features" role="list">
     {
@@ -58,14 +55,28 @@ const customTransition = {
       ))
     }
   </ul>
+
+  <div>
+    <p class="description">
+      {description}
+    </p>
+  </div>
+
+  <Drawer
+    title="⚠️ ご注意 ⚠️"
+    content="検品基準をクリアした商品をお届けしておりますが、手作業のため多少のズレや色ムラ等がある場合がございます。\nご理解いただける方のみご購入をお願いいたします🙇‍♀️"
+  />
+  <Drawer
+    title="📦 発送について"
+    content="入金確認後、1週間以内に発送いたします。\n日本国内: ご注文から到着まで最大2週間🚚\n海外: ご注文から到着まで3〜4週間🛩"
+  />
 </div>
 
 <style>
   .product-title {
     font-size: 3.5rem;
-    text-wrap: balance;
+    text-wrap: pretty;
     line-height: 0.9;
-    margin-bottom:;
   }
 
   .features {
@@ -98,7 +109,7 @@ const customTransition = {
   }
 
   .compare-price {
-    color: var(--color-surface-500);
+    color: lightcoral;
     font-weight: 400;
     text-decoration: line-through;
   }
@@ -116,5 +127,11 @@ const customTransition = {
   .description {
     white-space: pre-line;
     font-size: 1rem;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+    line-break: strict;
+    line-height: 1.75;
   }
 </style>

@@ -1,5 +1,6 @@
-export type CartProduct = {
+export type CartItem = {
   id: string;
-  // product: Product;
+  name: string;
+  imageSrc: string;
   quantity: number;
 };

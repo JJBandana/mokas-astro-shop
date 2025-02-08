@@ -1,12 +1,12 @@
 <script>
-  let cartOpen = $state(false);
+  import { isCartOpen } from "@/lib/state.ts";
 </script>
 
 <header>
   <div class="nav-left flex-content">
-    {#if cartOpen}
+    {#if $isCartOpen}
       <div class="cart">
-        <h1>Hello World!</h1>
+        <h4>Item added to your cart</h4>
       </div>
     {/if}
   </div>
@@ -83,7 +83,7 @@
   </div>
   <!-- svelte-ignore a11y_consider_explicit_label -->
   <div class="nav-right flex-content">
-    <button class="shopping-cart" onclick={() => (cartOpen = !cartOpen)}>
+    <a href="/cart" class="shopping-cart">
       <svg
         width="800px"
         height="800px"
@@ -106,7 +106,7 @@
           fill="#1C274C"
         />
       </svg>
-    </button>
+    </a>
   </div>
 </header>
 
@@ -182,8 +182,11 @@
   }
 
   .cart {
-    position: absolute;
-    top: 50px;
-    left: 50px;
+    position: fixed;
+    top: 56px;
+    right: 56px;
+    width: 50vw;
+    background-color: white;
+    aspect-ratio: 1/1;
   }
 </style>

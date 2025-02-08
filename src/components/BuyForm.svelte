@@ -1,4 +1,7 @@
 <script lang="ts">
+  import { addCartItem } from "@/lib/state.ts";
+  let { id, name } = $props();
+
   let quantity = $state(1);
 
   const minValue = 1;
@@ -22,16 +25,25 @@
 
   async function submit(event: SubmitEvent) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget as HTMLFormElement);
-    console.log(formData);
-
-    const response = await fetch("/api/checkout", {
-      method: "POST",
-      body: formData,
+    console.log(quantity);
+    console.log(id);
+    addCartItem({
+      id,
+      name,
+      imageSrc: "https://placehold.co/600x600/dodgerblue/black?text=Product",
+      quantity,
     });
 
-    const session = await response.json();
-    window.location = session.url;
+    // const formData = new FormData(event.currentTarget as HTMLFormElement);
+    // console.log(formData);
+
+    // const response = await fetch("/api/checkout", {
+    //   method: "POST",
+    //   body: formData,
+    // });
+
+    // const session = await response.json();
+    // window.location = session.url;
   }
 </script>
 
@@ -46,8 +58,7 @@
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            style="fill: currentColor;transform: ;msFilter:;"
-            ><path d="M5 11h14v2H5z"></path></svg
+            style="fill: currentColor;"><path d="M5 11h14v2H5z"></path></svg
           ></button
         >
         <input
@@ -65,7 +76,7 @@
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            style="fill: currentColor;transform: ;msFilter:;"
+            style="fill: currentColor;"
             ><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg
           ></button
         >

@@ -1,7 +1,7 @@
 ---
 import BuyForm from "@/components/BuyForm.svelte";
 import Drawer from "./Drawer.astro";
-const { name, description, price } = Astro.props;
+const { name, description, price, id } = Astro.props;
 
 const features = [
   "Handmade in Japan",
@@ -32,11 +32,11 @@ const customTransition = {
 <div class="product-info" transition:animate={customTransition}>
   <h1 class="product-title daruma-regular text-primary-700">{name}</h1>
   <div class="price-container">
-    <p class="price">{price}</p>
-    <p class="compare-price">{price * 2}</p>
+    <p class="price">{price.jpy}</p>
+    <p class="compare-price">{price.jpy * 2}</p>
   </div>
 
-  <BuyForm client:load />
+  <BuyForm {id} {name} client:idle />
 
   <ul class="features" role="list">
     {
@@ -56,11 +56,7 @@ const customTransition = {
     }
   </ul>
 
-  <div>
-    <p class="description">
-      {description}
-    </p>
-  </div>
+  <div class="description" set:html={description} />
 
   <Drawer
     title="⚠️ ご注意 ⚠️"
@@ -71,6 +67,18 @@ const customTransition = {
     content="入金確認後、1週間以内に発送いたします。\n日本国内: ご注文から到着まで最大2週間🚚\n海外: ご注文から到着まで3〜4週間🛩"
   />
 </div>
+
+<style is:inline>
+  .description h2 {
+    font-size: 1.05rem;
+    font-weight: bold;
+    padding-block: 2rem 0.75rem;
+  }
+
+  .description b {
+    font-weight: bold;
+  }
+</style>
 
 <style>
   .product-title {
@@ -126,12 +134,7 @@ const customTransition = {
 
   .description {
     white-space: pre-line;
+    text-wrap: balance;
     font-size: 1rem;
-
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    word-break: keep-all;
-    line-break: strict;
-    line-height: 1.75;
   }
 </style>

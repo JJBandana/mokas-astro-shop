@@ -1,0 +1,11 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import CartTable from "@/components/CartTable.svelte";
+---
+
+<Layout title="Your Shopping Cart">
+  <main class="container">
+    <h1 class="fs-900">Your cart</h1>
+    <CartTable client:load />
+  </main>
+</Layout>

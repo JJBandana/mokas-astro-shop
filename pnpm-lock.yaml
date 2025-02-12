@@ -14,6 +14,9 @@ importers:
       '@astrojs/vercel':
         specifier: ^8.0.4
         version: 8.0.5(astro@5.2.5(@types/node@22.13.1)(rollup@4.34.2)(typescript@5.7.3))(rollup@4.34.2)(svelte@5.19.7)
+      '@nanostores/persistent':
+        specifier: ^0.10.2
+        version: 0.10.2(nanostores@0.11.3)
       astro:
         specifier: ^5.1.9
         version: 5.2.5(@types/node@22.13.1)(rollup@4.34.2)(typescript@5.7.3)
@@ -374,6 +377,12 @@ packages:
     resolution: {integrity: sha512-llMXd39jtP0HpQLVI37Bf1m2ADlEb35GYSh1SDSLsBhR+5iCxiNGlT31yqbNtVHygHAtMy6dWFERpU2JgufhPg==}
     engines: {node: '>=18'}
     hasBin: true
+
+  '@nanostores/persistent@0.10.2':
+    resolution: {integrity: sha512-BEndnLhRC+yP7gXTESepBbSj8XNl8OXK9hu4xAgKC7MWJHKXnEqJMqY47LUyHxK6vYgFnisyHmqq+vq8AUFyIg==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    peerDependencies:
+      nanostores: ^0.9.0 || ^0.10.0 || ^0.11.0
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -2284,6 +2293,10 @@ snapshots:
     transitivePeerDependencies:
       - encoding
       - supports-color
+
+  '@nanostores/persistent@0.10.2(nanostores@0.11.3)':
+    dependencies:
+      nanostores: 0.11.3
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:

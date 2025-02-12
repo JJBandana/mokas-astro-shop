@@ -1,5 +1,5 @@
-<script>
-  import { isCartOpen } from "@/lib/state.ts";
+<script lang="ts">
+  import { clearCart, getTotalQuantity, isCartOpen } from "@/lib/state.ts";
 </script>
 
 <header>
@@ -13,12 +13,7 @@
   <!-- svelte-ignore a11y_consider_explicit_label -->
   <div class="nav-center flex-content">
     <a href="/">
-      <svg
-        id="a"
-        xmlns="http://www.w3.org/2000/svg"
-        version="1.1"
-        viewBox="0 0 185.8 154.9"
-      >
+      <svg id="a" version="1.1" viewBox="0 0 185.8 154.9">
         <defs>
           <style>
             .st0,
@@ -84,13 +79,7 @@
   <!-- svelte-ignore a11y_consider_explicit_label -->
   <div class="nav-right flex-content">
     <a href="/cart" class="shopping-cart">
-      <svg
-        width="800px"
-        height="800px"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none">
         <path
           d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z"
           stroke="#1C274C"
@@ -106,7 +95,13 @@
           fill="#1C274C"
         />
       </svg>
+      {#if $getTotalQuantity > 0}
+        <span>
+          {$getTotalQuantity}
+        </span>
+      {/if}
     </a>
+    <button onclick={() => clearCart()}> 🗑️ </button>
   </div>
 </header>
 
@@ -140,27 +135,27 @@
       height: 60px;
       padding: 0.5rem;
     }
+  }
 
-    &::after {
-      content: "10";
-      font-size: 0.7rem;
-      font-weight: bold;
+  span {
+    content: none;
+    font-size: 0.7rem;
+    font-weight: bold;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-      position: absolute;
-      right: 0.25rem;
-      bottom: 0.25rem;
+    position: absolute;
+    right: 0.25rem;
+    bottom: 0.25rem;
 
-      width: 1rem;
-      height: 1rem;
+    width: 1rem;
+    height: 1rem;
 
-      background-color: var(--clr-primary-600);
-      color: var(--clr-primary-50);
-      border-radius: 50%;
-    }
+    background-color: var(--clr-primary-600);
+    color: var(--clr-primary-50);
+    border-radius: 50%;
   }
 
   .flex-content {

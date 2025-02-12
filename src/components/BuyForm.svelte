@@ -1,6 +1,7 @@
 <script lang="ts">
   import { addCartItem } from "@/lib/state.ts";
-  let { id, name } = $props();
+  let { product } = $props();
+  const { name, id, price } = product;
 
   let quantity = $state(1);
 
@@ -25,25 +26,14 @@
 
   async function submit(event: SubmitEvent) {
     event.preventDefault();
-    console.log(quantity);
-    console.log(id);
+    console.log(price.jpy);
     addCartItem({
       id,
       name,
-      imageSrc: "https://placehold.co/600x600/dodgerblue/black?text=Product",
+      imageSrc: product.images[0],
+      price: price.jpy,
       quantity,
     });
-
-    // const formData = new FormData(event.currentTarget as HTMLFormElement);
-    // console.log(formData);
-
-    // const response = await fetch("/api/checkout", {
-    //   method: "POST",
-    //   body: formData,
-    // });
-
-    // const session = await response.json();
-    // window.location = session.url;
   }
 </script>
 

@@ -1,7 +1,7 @@
 ---
 import BuyForm from "@/components/BuyForm.svelte";
 import Drawer from "./Drawer.astro";
-const { name, description, price, id } = Astro.props;
+const { product } = Astro.props;
 
 const features = [
   "Handmade in Japan",
@@ -30,13 +30,13 @@ const customTransition = {
 ---
 
 <div class="product-info" transition:animate={customTransition}>
-  <h1 class="product-title daruma-regular text-primary-700">{name}</h1>
+  <h1 class="product-title daruma-regular text-primary-700">{product.name}</h1>
   <div class="price-container">
-    <p class="price">{price.jpy}</p>
-    <p class="compare-price">{price.jpy * 2}</p>
+    <p class="price">{product.price.jpy}</p>
+    <p class="compare-price">{product.price.jpy * 2}</p>
   </div>
 
-  <BuyForm {id} {name} client:idle />
+  <BuyForm {product} client:load />
 
   <ul class="features" role="list">
     {
@@ -56,7 +56,7 @@ const customTransition = {
     }
   </ul>
 
-  <div class="description" set:html={description} />
+  <div class="description" set:html={product.description} />
 
   <Drawer
     title="⚠️ ご注意 ⚠️"

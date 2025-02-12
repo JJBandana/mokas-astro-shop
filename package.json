@@ -11,6 +11,7 @@
   "dependencies": {
     "@astrojs/svelte": "^7.0.4",
     "@astrojs/vercel": "^8.0.4",
+    "@nanostores/persistent": "^0.10.2",
     "astro": "^5.1.9",
     "nanostores": "^0.11.3",
     "stripe": "^17.6.0",

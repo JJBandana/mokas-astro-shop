@@ -1,5 +1,5 @@
-# build output
-dist/
+# build output THIS SHOULD BE HERE FOR SSR
+# dist/
 
 # generated types
 .astro/

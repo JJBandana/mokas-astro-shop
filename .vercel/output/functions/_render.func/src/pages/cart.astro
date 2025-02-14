@@ -1,31 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import CartTable from "@/components/CartTable.svelte";
-import { cartItems } from "@/lib/state";
+
+export const prerender = false;
 ---
 
 <Layout title="Your Shopping Cart">
-  <main class="container">
-    <div class="title">
-      <h1 class="fs-900">Your cart</h1>
-      <a href="/"><h2>Continue Shopping</h2></a>
-    </div>
-
-    <CartTable client:load />
-  </main>
+  <CartTable client:load />
 </Layout>
-
-<style>
-  .title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
-    a {
-      font-weight: 600;
-      font-size: 1.25rem;
-      text-decoration: underline;
-    }
-  }
-</style>

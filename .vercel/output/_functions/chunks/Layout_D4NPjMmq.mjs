@@ -1,4 +1,4 @@
-import { c as createComponent, r as renderTemplate, m as maybeRenderHead, b as createAstro, d as addAttribute, g as renderScript, a as renderComponent, h as renderHead, i as renderSlot } from './astro/server_aeNpjgWn.mjs';
+import { c as createComponent, r as renderTemplate, m as maybeRenderHead, b as createAstro, d as addAttribute, g as renderScript, a as renderComponent, h as renderHead, i as renderSlot } from './astro/server_D_R5ONS9.mjs';
 /* empty css                        */
 import { f as current_component, p as push, s as store_get, u as unsubscribe_stores, d as pop, e as ensure_array_like } from './_@astro-renderers_CiwgCeQP.mjs';
 import { atom, computed } from 'nanostores';
@@ -48,6 +48,16 @@ const cartItems = persistentMap(
     decode: JSON.parse
   }
 );
+function removeCartItem(id) {
+  cartItems.setKey(id, undefined);
+}
+const updateQuantity = (id, quantity) => {
+  const existingEntry = cartItems.get()[id];
+  cartItems.setKey(id, {
+    ...existingEntry,
+    quantity
+  });
+};
 const getTotalQuantity = computed(
   cartItems,
   (items) => Object.values(items).reduce((total, item) => total + item.quantity, 0)
@@ -152,4 +162,4 @@ const $$Layout = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`<html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator"${addAttribute(Astro2.generator, "content")}>${renderComponent($$result, "ClientRouter", $$ClientRouter, {})}<title>${title}</title>${renderHead()}</head> <body> ${renderComponent($$result, "Announcement", Announcement, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/Announcement.svelte", "client:component-export": "default" })} ${renderComponent($$result, "Header", Header, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/Header.svelte", "client:component-export": "default" })} <div class="container"> ${renderSlot($$result, $$slots["default"])} </div> ${renderComponent($$result, "Footer", $$Footer, {})} </body></html>`;
 }, "C:/Develop/mokas-astro-shop/src/layouts/Layout.astro", undefined);
 
-export { $$Layout as $, cartItems as c, escape_html as e };
+export { $$Layout as $, cartItems as c, escape_html as e, removeCartItem as r, updateQuantity as u };

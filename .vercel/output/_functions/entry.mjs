@@ -1,20 +1,22 @@
 import { r as renderers } from './chunks/_@astro-renderers_CiwgCeQP.mjs';
-import { c as createExports } from './chunks/entrypoint_2KFB_gaU.mjs';
-import { manifest } from './manifest_DHdGTDxa.mjs';
+import { c as createExports } from './chunks/entrypoint_BJuBSqRz.mjs';
+import { manifest } from './manifest_CwyTl8i4.mjs';
 
 const serverIslandMap = new Map();;
 
 const _page0 = () => import('./pages/_image.astro.mjs');
-const _page1 = () => import('./pages/cart.astro.mjs');
-const _page2 = () => import('./pages/commerce-disclosure.astro.mjs');
-const _page3 = () => import('./pages/products/_---slug_.astro.mjs');
-const _page4 = () => import('./pages/index.astro.mjs');
+const _page1 = () => import('./pages/api/checkout.astro.mjs');
+const _page2 = () => import('./pages/cart.astro.mjs');
+const _page3 = () => import('./pages/commerce-disclosure.astro.mjs');
+const _page4 = () => import('./pages/products/_---slug_.astro.mjs');
+const _page5 = () => import('./pages/index.astro.mjs');
 const pageMap = new Map([
     ["node_modules/.pnpm/astro@5.2.5_@types+node@22._455e6c0a0004dd10e4941117cfa478e1/node_modules/astro/dist/assets/endpoint/generic.js", _page0],
-    ["src/pages/cart.astro", _page1],
-    ["src/pages/commerce-disclosure.astro", _page2],
-    ["src/pages/products/[...slug].astro", _page3],
-    ["src/pages/index.astro", _page4]
+    ["src/pages/api/checkout.ts", _page1],
+    ["src/pages/cart.astro", _page2],
+    ["src/pages/commerce-disclosure.astro", _page3],
+    ["src/pages/products/[...slug].astro", _page4],
+    ["src/pages/index.astro", _page5]
 ]);
 
 const _manifest = Object.assign(manifest, {
@@ -24,7 +26,7 @@ const _manifest = Object.assign(manifest, {
     middleware: () => import('./_noop-middleware.mjs')
 });
 const _args = {
-    "middlewareSecret": "4fd955af-4ad5-454a-9b09-83263d222056",
+    "middlewareSecret": "5275c7f3-83e7-470e-ab05-362a6ebb55ff",
     "skewProtection": false
 };
 const _exports = createExports(_manifest, _args);

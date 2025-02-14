@@ -15,6 +15,11 @@ export default defineConfig({
   //   mode: "standalone",
   // }),
   adapter: vercel(),
+  vite: {
+    ssr: {
+      external: ["nanostores"],
+    },
+  },
   env: {
     schema: {
       STRIPE_SECRET_KEY: envField.string({

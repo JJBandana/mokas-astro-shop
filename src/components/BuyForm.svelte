@@ -26,7 +26,6 @@
 
   async function submit(event: SubmitEvent) {
     event.preventDefault();
-    console.log(price.jpy);
     addCartItem({
       id,
       name,

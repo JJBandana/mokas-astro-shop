@@ -1,21 +1,13 @@
 <script lang="ts">
-  let { quantity = $bindable(1), minValue = 1, maxValue = 10 } = $props();
+  import { decrementQuantity, incrementQuantity } from "@/lib/state";
 
-  const increment = (event: Event) => {
-    event.preventDefault();
-
-    if (quantity < maxValue) {
-      quantity++;
-    }
-  };
-
-  const decrement = (event: Event) => {
-    event.preventDefault();
-
-    if (quantity > minValue) {
-      quantity--;
-    }
-  };
+  let {
+    quantity = $bindable(1),
+    minValue = 1,
+    maxValue = 10,
+    decrement,
+    increment,
+  } = $props();
 </script>
 
 <div class="stepper">

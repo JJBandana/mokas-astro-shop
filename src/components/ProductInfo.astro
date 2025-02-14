@@ -32,8 +32,8 @@ const customTransition = {
 <div class="product-info" transition:animate={customTransition}>
   <h1 class="product-title daruma-regular text-primary-700">{product.name}</h1>
   <div class="price-container">
-    <p class="price">{product.price.jpy}</p>
-    <p class="compare-price">{product.price.jpy * 2}</p>
+    <p class="price">¥{product.price.jpy}</p>
+    <p class="compare-price">¥{product.compare_price.jpy}</p>
   </div>
 
   <BuyForm {product} client:load />
@@ -88,7 +88,7 @@ const customTransition = {
   }
 
   .features {
-    padding-block: 10px;
+    padding-top: 0.75rem;
   }
 
   li {

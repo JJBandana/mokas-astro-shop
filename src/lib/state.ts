@@ -26,13 +26,35 @@ export function addCartItem({ id, name, imageSrc, price, quantity }: CartItem) {
   console.log(cartItems.get());
 }
 
-// export function removeCartItem(id: string) {
-//   cartItems.setKey(id, undefined)
-// }
+export function removeCartItem(id: string) {
+  cartItems.setKey(id, undefined);
+}
 
 export function clearCart() {
   cartItems.set({});
 }
+
+export const incrementQuantity = (id: string) => {
+  const existingEntry = cartItems.get()[id];
+  cartItems.setKey(id, {
+    ...existingEntry,
+    quantity: existingEntry.quantity + 1,
+  });
+};
+export const decrementQuantity = (id: string) => {
+  const existingEntry = cartItems.get()[id];
+  cartItems.setKey(id, {
+    ...existingEntry,
+    quantity: existingEntry.quantity - 1,
+  });
+};
+export const updateQuantity = (id: string, quantity: number) => {
+  const existingEntry = cartItems.get()[id];
+  cartItems.setKey(id, {
+    ...existingEntry,
+    quantity,
+  });
+};
 
 export const getTotalQuantity = computed(cartItems, (items) =>
   Object.values(items).reduce((total, item) => total + item.quantity, 0)

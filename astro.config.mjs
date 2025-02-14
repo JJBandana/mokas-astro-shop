@@ -5,11 +5,15 @@ import svelte from "@astrojs/svelte";
 
 import vercel from "@astrojs/vercel";
 
+import node from "@astrojs/node";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [svelte()],
   output: "server",
-  adapter: vercel(),
+  adapter: node({
+    mode: "standalone",
+  }),
   env: {
     schema: {
       STRIPE_SECRET_KEY: envField.string({

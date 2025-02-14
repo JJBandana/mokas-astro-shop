@@ -14,7 +14,6 @@ export const getStaticPaths = (() => {
   });
 }) satisfies GetStaticPaths;
 
-const { slug } = Astro.params;
 const { product } = Astro.props;
 
 export const prerender = true;
@@ -22,6 +21,6 @@ export const prerender = true;
 
 <Layout title={product.name}>
   <ProductSection {product} />
-  <h2>Related Products</h2>
+  <h2 class="fs-800 daruma-regular">Related Products</h2>
   <Catalog {products} excludeId={product.id} />
 </Layout>

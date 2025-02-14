@@ -11,9 +11,10 @@ import node from "@astrojs/node";
 export default defineConfig({
   integrations: [svelte()],
   output: "server",
-  adapter: node({
-    mode: "standalone",
-  }),
+  // adapter: node({
+  //   mode: "standalone",
+  // }),
+  adapter: vercel(),
   env: {
     schema: {
       STRIPE_SECRET_KEY: envField.string({

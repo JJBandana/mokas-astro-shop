@@ -101,7 +101,6 @@
         </span>
       {/if}
     </a>
-    <button onclick={() => clearCart()}> 🗑️ </button>
   </div>
 </header>
 

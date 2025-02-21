@@ -59,16 +59,19 @@ const customTransition = {
   <div class="description" set:html={product.description} />
 
   <Drawer
-    title="⚠️ ご注意 ⚠️"
-    content="検品基準をクリアした商品をお届けしておりますが、手作業のため多少のズレや色ムラ等がある場合がございます。\nご理解いただける方のみご購入をお願いいたします🙇‍♀️"
+    title="⚠️ Notice ⚠️"
+    content="We deliver products that have passed our inspection standards. However, due to the handmade nature of the process, there may be slight misalignments or color variations.\nWe kindly ask for your understanding before making a purchase. 🙇‍♀️"
   />
   <Drawer
-    title="📦 発送について"
-    content="入金確認後、1週間以内に発送いたします。\n日本国内: ご注文から到着まで最大2週間🚚\n海外: ご注文から到着まで3〜4週間🛩"
+    title="📦 Shipping Information"
+    content="Your order will be shipped within one week after payment confirmation.\nWithin Japan: Delivery may take up to 2 weeks 🚚.\nInternational: Delivery may take 3 to 4 weeks 🛩."
   />
 </div>
 
 <style is:inline>
+  .description p {
+    text-wrap: pretty;
+  }
   .description h2 {
     font-size: 1.05rem;
     font-weight: bold;

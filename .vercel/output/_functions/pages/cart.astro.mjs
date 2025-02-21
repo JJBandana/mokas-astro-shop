@@ -1,9 +1,9 @@
 import { c as createComponent, r as renderTemplate, a as renderComponent } from '../chunks/astro/server_D_R5ONS9.mjs';
-import { e as escape_html, c as cartItems, r as removeCartItem, u as updateQuantity, $ as $$Layout } from '../chunks/Layout_D4NPjMmq.mjs';
+import { e as escape_html, c as cartItems, r as removeCartItem, u as updateQuantity, $ as $$Layout } from '../chunks/Layout_CAhmaF8p.mjs';
 import { b as bind_props, p as push, c as copy_payload, a as assign_payload, u as unsubscribe_stores, d as pop, s as store_get, e as ensure_array_like } from '../chunks/_@astro-renderers_CiwgCeQP.mjs';
 export { r as renderers } from '../chunks/_@astro-renderers_CiwgCeQP.mjs';
 /* empty css                                */
-import { a as attr } from '../chunks/attributes_Bumjy3Tg.mjs';
+import { a as attr } from '../chunks/attributes_GcH0ZnsA.mjs';
 
 function Stepper($$payload, $$props) {
 	let {
@@ -46,12 +46,12 @@ function CartTable($$payload, $$props) {
 
 			const each_array = ensure_array_like(Object.values(store_get($$store_subs ??= {}, '$cartItems', cartItems)));
 
-			$$payload.out += `<div class="title svelte-1m0ee1l"><h1 class="fs-900">Your cart</h1> <a href="/" class="svelte-1m0ee1l"><h2>Continue Shopping</h2></a></div> <table class="svelte-1m0ee1l"><thead class="svelte-1m0ee1l"><tr class="svelte-1m0ee1l"><th class="product-col svelte-1m0ee1l">PRODUCT</th><th class="details-col svelte-1m0ee1l"></th><th class="quantity-col svelte-1m0ee1l">QUANTITY</th><th class="total-col svelte-1m0ee1l">TOTAL</th></tr></thead><tbody><!--[-->`;
+			$$payload.out += `<div class="title svelte-1c25pzb"><h1 class="fs-900">Your cart</h1> <a href="/" class="svelte-1c25pzb"><h2>Continue Shopping</h2></a></div> <table class="svelte-1c25pzb"><thead class="svelte-1c25pzb"><tr class="svelte-1c25pzb"><th class="product-col svelte-1c25pzb">PRODUCT</th><th class="details-col svelte-1c25pzb"></th><th class="quantity-col svelte-1c25pzb">QUANTITY</th><th class="total-col svelte-1c25pzb">TOTAL</th></tr></thead><tbody><!--[-->`;
 
 			for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
 				let cartItem = each_array[$$index];
 
-				$$payload.out += `<tr><td class="svelte-1m0ee1l"><img${attr('src', cartItem.imageSrc)}${attr('alt', cartItem.name)} width="100"></td><td class="svelte-1m0ee1l"><div class="item-description svelte-1m0ee1l"><h2>${escape_html(cartItem.name)}</h2> <p>${escape_html(cartItem.price)}</p></div></td><td class="svelte-1m0ee1l"><div class="quantity-cell">`;
+				$$payload.out += `<tr><td class="svelte-1c25pzb"><img${attr('src', cartItem.imageSrc)}${attr('alt', cartItem.name)} width="100"></td><td class="svelte-1c25pzb"><div class="item-description svelte-1c25pzb"><h2>${escape_html(cartItem.name)}</h2> <p>${escape_html(cartItem.price)}</p></div></td><td class="svelte-1c25pzb"><div class="quantity-cell">`;
 
 				Stepper($$payload, {
 					increment: () => increment(cartItem.id, cartItem.quantity),
@@ -65,13 +65,13 @@ function CartTable($$payload, $$props) {
 					}
 				});
 
-				$$payload.out += `<!----></div></td><td class="svelte-1m0ee1l">${escape_html((cartItem.quantity * cartItem.price).toFixed(2))}</td></tr>`;
+				$$payload.out += `<!----></div></td><td class="svelte-1c25pzb">${escape_html((cartItem.quantity * cartItem.price).toFixed(2))}</td></tr>`;
 			}
 
 			$$payload.out += `<!--]--></tbody></table> <button class="button">Checkout</button>`;
 		} else {
 			$$payload.out += '<!--[!-->';
-			$$payload.out += `<h1>Your Cart is Empty</h1>`;
+			$$payload.out += `<section class="empty svelte-1c25pzb"><h1 class="fs-900">Your Cart is Empty</h1> <a class="button" href="/">Continue Shopping</a></section>`;
 		}
 
 		$$payload.out += `<!--]-->`;

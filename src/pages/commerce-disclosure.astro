@@ -44,7 +44,9 @@ export const prerender = true;
             return (
               <tr>
                 <td class="heading">{key.split("_").join(" ")}</td>
-                <td class="value">{value}</td>
+                <td class="value">
+                  <p>{value}</p>
+                </td>
               </tr>
             );
           })
@@ -60,7 +62,11 @@ export const prerender = true;
   }
   .content-table {
     border-collapse: collapse;
-    margin: 25px 0;
+    margin: 32px auto;
+  }
+
+  p {
+    margin-inline: auto;
   }
 
   tr {

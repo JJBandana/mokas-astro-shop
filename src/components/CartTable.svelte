@@ -88,7 +88,10 @@
 
   <button class="button" onclick={checkout}>Checkout</button>
 {:else}
-  <h1>Your Cart is Empty</h1>
+  <section class="empty">
+    <h1 class="fs-900">Your Cart is Empty</h1>
+    <a class="button" href="/">Continue Shopping</a>
+  </section>
 {/if}
 
 <style>
@@ -148,5 +151,14 @@
     flex-direction: column;
     padding-top: 1rem;
     align-items: start;
+  }
+
+  .empty {
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    align-items: center;
+    gap: 20px;
+    margin: 50px auto 300px;
   }
 </style>
